@@ -3,7 +3,6 @@ describe("Проверка успешной отправки формы обра
     cy.viewport(1583, 739);
     cy.visit("https://kontaktnaya-forma.testograf.ru/");
 
-    // Load data from the fixture
     cy.fixture('data').then((data) => {
       // Fill out the form using data from the fixture
       cy.get("div.question_107 input").click();
@@ -21,10 +20,8 @@ describe("Проверка успешной отправки формы обра
       cy.get("textarea").click();
       cy.get("textarea").type(data.message);
 
-      // Submit the form
-      cy.get("div.navigation span").click();
+      cy.get("div.navigation span").click(); // Отправка формы
 
-      // Check for success message
       cy.get('div > p')
         .should('be.visible')
         .contains(data.successMessage); 
