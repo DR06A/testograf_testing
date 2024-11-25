@@ -4,7 +4,6 @@ describe("Проверка успешной отправки формы обра
     cy.visit("https://kontaktnaya-forma.testograf.ru/");
 
     cy.fixture('data').then((data) => {
-      // Fill out the form using data from the fixture
       cy.get("div.question_107 input").click();
       cy.get("div.question_107 input").type(data.question_107);
 
