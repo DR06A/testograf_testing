@@ -23,7 +23,7 @@ describe("Проверка успешной отправки формы обра
 
       cy.get('div > p')
         .should('be.visible')
-        .contains(data.successMessage); 
+        .contains(data.successMessage); // Проверка успешности отправки
     });
   });
 });
